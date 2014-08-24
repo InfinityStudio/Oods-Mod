@@ -1,5 +1,9 @@
 package oodmod.block;
 
+
+import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 import oodmod.block.crop.BeetrootCropClass;
 import oodmod.block.crop.BroccoliCropClass;
 import oodmod.block.crop.CauliflowerCropClass;
@@ -15,9 +19,6 @@ import oodmod.block.trees.PlankClass;
 import oodmod.block.trees.SaplingBlockClass;
 import oodmod.block.trees.SaplingClass;
 import oodmod.main.MainClass;
-import cpw.mods.fml.common.registry.GameRegistry;
-import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
 
 public class BlockClass {
 	

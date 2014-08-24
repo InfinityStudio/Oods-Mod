@@ -1,6 +1,5 @@
 package oodmod.achievements;
 
-import net.minecraft.item.ItemStack;
 import oodmod.item.ItemClass;
 import oodmod.main.MainClass;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;

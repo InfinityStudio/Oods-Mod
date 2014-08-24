@@ -2,7 +2,6 @@ package oodmod.block;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.creativetab.CreativeTabs;
 import oodmod.main.MainClass;
 
 public class KroostylBlocksClass extends Block {

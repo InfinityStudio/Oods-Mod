@@ -1,15 +1,13 @@
 package oodmod.worldgen;
 
 import java.util.Random;
-
-import oodmod.block.BlockClass;
-import oodmod.main.MainClass;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSapling;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import net.minecraftforge.common.util.ForgeDirection;
+import oodmod.block.BlockClass;
 
 public class OrangeTreeGenerationClass extends WorldGenAbstractTree
 {

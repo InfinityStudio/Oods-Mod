@@ -1,7 +1,6 @@
 package oodmod.block.crop;
 
 import java.util.Random;
-
 import net.minecraft.block.BlockCrops;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.item.Item;

@@ -1,7 +1,5 @@
 package oodmod.item.tools;
 
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemSpade;
 import oodmod.main.MainClass;
 

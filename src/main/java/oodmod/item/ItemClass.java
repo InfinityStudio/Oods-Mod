@@ -1,5 +1,10 @@
 package oodmod.item;
 
+import net.minecraft.init.Blocks;
+import net.minecraft.item.Item;
+import net.minecraft.item.Item.ToolMaterial;
+import net.minecraft.item.ItemArmor.ArmorMaterial;
+import net.minecraftforge.common.util.EnumHelper;
 import oodmod.block.BlockClass;
 import oodmod.item.armour.KroostylArmour;
 import oodmod.item.armour.ReinforcedKroostylArmour;
@@ -12,11 +17,6 @@ import oodmod.item.tools.KroostylShovelClass;
 import oodmod.item.tools.KroostylSwordClass;
 import oodmod.main.MainClass;
 import cpw.mods.fml.common.registry.GameRegistry;
-import net.minecraft.init.Blocks;
-import net.minecraft.item.Item;
-import net.minecraft.item.Item.ToolMaterial;
-import net.minecraft.item.ItemArmor.ArmorMaterial;
-import net.minecraftforge.common.util.EnumHelper;
 
 public class ItemClass {
 	

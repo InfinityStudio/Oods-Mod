@@ -1,12 +1,10 @@
 package oodmod.worldgen;
 
 import java.util.Random;
-
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenMinable;
 import oodmod.block.BlockClass;
-import oodmod.main.MainClass;
 import cpw.mods.fml.common.IWorldGenerator;
 
 public class OreGenerationClass implements IWorldGenerator {

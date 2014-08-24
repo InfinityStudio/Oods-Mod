@@ -1,7 +1,6 @@
 package oodmod.item.tools;
 
 import oodmod.main.MainClass;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemPickaxe;
 
 public class KroostylPickaxeClass extends ItemPickaxe {

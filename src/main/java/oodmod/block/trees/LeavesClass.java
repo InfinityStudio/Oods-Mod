@@ -2,20 +2,18 @@ package oodmod.block.trees;
 
 import java.util.List;
 import java.util.Random;
-
-import oodmod.block.BlockClass;
-import oodmod.main.MainClass;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import oodmod.block.BlockClass;
+import oodmod.main.MainClass;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class LeavesClass extends BlockLeaves {
 

@@ -1,6 +1,5 @@
 package oodmod.item.food;
 
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemFood;
 import oodmod.main.MainClass;
 

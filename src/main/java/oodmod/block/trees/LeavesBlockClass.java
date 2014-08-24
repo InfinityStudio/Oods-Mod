@@ -1,14 +1,8 @@
 package oodmod.block.trees;
 
-import java.util.Random;
-
 import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
-import oodmod.main.MainClass;
 
 public class LeavesBlockClass extends ItemBlock {
 
