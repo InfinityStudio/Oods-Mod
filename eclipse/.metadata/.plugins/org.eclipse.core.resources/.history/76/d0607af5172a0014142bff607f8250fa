@@ -1,0 +1,16 @@
+[
+{
+  "modid": "oodmod",
+  "name": "Ood's Mod",
+  "description": "",
+  "version": "1.90",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authors": ["Ood"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

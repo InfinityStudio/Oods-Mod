@@ -1,0 +1,370 @@
+package oodmod;
+
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
+import net.minecraft.item.Item;
+import net.minecraft.item.Item.ToolMaterial;
+import net.minecraft.item.ItemArmor.ArmorMaterial;
+import net.minecraft.item.ItemStack;
+import net.minecraft.stats.Achievement;
+import net.minecraft.stats.AchievementList;
+import net.minecraftforge.common.AchievementPage;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.util.EnumHelper;
+import net.minecraftforge.oredict.OreDictionary;
+import oodmod.achievements.KroostylCraftEventClass;
+import oodmod.achievements.KroostylMineEventClass;
+import oodmod.armour.KroostylArmour;
+import oodmod.armour.ReinforcedKroostylArmour;
+import oodmod.block.CompressedVegClass;
+import oodmod.block.KroostylBlocksClass;
+import oodmod.block.KroostylStairsClass;
+import oodmod.block.KroostylOreClass;
+import oodmod.block.PlanksClass;
+import oodmod.block.crop.BeetrootCropClass;
+import oodmod.block.crop.BroccoliCropClass;
+import oodmod.block.crop.CauliflowerCropClass;
+import oodmod.block.crop.GarlicCropClass;
+import oodmod.block.crop.LeekCropClass;
+import oodmod.block.crop.OnionCropClass;
+import oodmod.food.FruitClass;
+import oodmod.food.VegClass;
+import oodmod.item.KroostylClass;
+import oodmod.item.SeedsClass;
+import oodmod.tools.KroostylAxeClass;
+import oodmod.tools.KroostylHoeClass;
+import oodmod.tools.KroostylPickaxeClass;
+import oodmod.tools.KroostylShovelClass;
+import oodmod.tools.KroostylSwordClass;
+import oodmod.trees.LeavesBlockClass;
+import oodmod.trees.LeavesClass;
+import oodmod.trees.LogBlockClass;
+import oodmod.trees.LogClass;
+import oodmod.trees.SaplingBlockClass;
+import oodmod.trees.SaplingClass;
+import oodmod.worldgen.OreGenerationClass;
+import cpw.mods.fml.common.FMLCommonHandler;
+import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.Mod.EventHandler;
+import cpw.mods.fml.common.Mod.Metadata;
+import cpw.mods.fml.common.ModMetadata;
+import cpw.mods.fml.common.SidedProxy;
+import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPostInitializationEvent;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.registry.GameRegistry;
+
+@Mod(modid = MainClass.MODID, name = MainClass.NAME, version = MainClass.VERSION)
+public class MainClass {
+	@SidedProxy(clientSide = "oodmod.ClientProxy", serverSide = "oodmod.CommonProxy")
+	public static CommonProxy proxy;
+	
+	@Metadata
+	public static ModMetadata meta;
+	
+		//Mod Info
+		public static final String MODID = "oodmod";
+		public static final String NAME = "Ood's Mod";
+		public static final String VERSION = "1.90";
+	
+		//Armour IDs
+		public static int helmetID;
+		public static int chestplateID;
+		public static int leggingsID;
+		public static int bootsID;
+		
+		//Achievements
+		public static Achievement achievementKroostyl;
+		public static Achievement achievementKroostylPick;
+		
+		//Creative Tabs
+		public static CreativeTabs OodModTab = new OodModTab(CreativeTabs.getNextID(), "OodModTab");
+	
+		//Materials
+		public static ToolMaterial KroostylMaterial = EnumHelper.addToolMaterial("Kroostyl", 4, 2000, 10.0F, 8.0F, 10);
+		public static ArmorMaterial KroostylArmour = EnumHelper.addArmorMaterial("Kroostyl", 66, new int[] {6, 16, 12, 6}, 10);
+		public static ArmorMaterial ReinforcedKroostylArmour = EnumHelper.addArmorMaterial("ReinforcedKroostyl", 264, new int[] {8, 18, 14, 8}, 10);
+		
+		//Generation
+		public static OreGenerationClass KroostylWorldGen = new OreGenerationClass();
+		
+		//Blocks
+		
+		//Crops
+		public static Block BroccoliCrop = new BroccoliCropClass().setBlockName("BroccoliCrop");
+		public static Block OnionCrop = new OnionCropClass().setBlockName("OnionCrop");
+		public static Block BeetrootCrop = new BeetrootCropClass().setBlockName("BeetrootCrop");
+		public static Block CauliflowerCrop = new CauliflowerCropClass().setBlockName("CauliflowerCrop");
+		public static Block LeekCrop = new LeekCropClass().setBlockName("LeekCrop");
+		public static Block GarlicCrop = new GarlicCropClass().setBlockName("GarlicCrop");
+		
+		//Veg
+		public static Block CompressedBroccoli = new CompressedVegClass(Material.grass).setBlockName("CompressedBroccoli").setBlockTextureName(MainClass.MODID + ":CompressedBroccoli");
+		public static Block CompressedOnion = new CompressedVegClass(Material.grass).setBlockName("CompressedOnion").setBlockTextureName(MainClass.MODID + ":CompressedOnion");
+		public static Block CompressedBeetroot = new CompressedVegClass(Material.grass).setBlockName("CompressedBeetroot").setBlockTextureName(MainClass.MODID + ":CompressedBeetroot");
+		public static Block CompressedCauliflower = new CompressedVegClass(Material.grass).setBlockName("CompressedCauliflower").setBlockTextureName(MainClass.MODID + ":CompressedCauliflower");
+		public static Block CompressedLeek = new CompressedVegClass(Material.grass).setBlockName("CompressedLeek").setBlockTextureName(MainClass.MODID + ":CompressedLeek");
+		public static Block CompressedGarlic = new CompressedVegClass(Material.grass).setBlockName("CompressedGarlic").setBlockTextureName(MainClass.MODID + ":CompressedGarlic");
+		
+		//Ores
+		public static Block KroostylOre = new KroostylOreClass(Material.rock).setBlockName("KroostylOre");
+		
+		//Decorative Blocks
+		public static Block KroostylBlock = new KroostylBlocksClass(Material.rock).setBlockName("KroostylBlock").setBlockTextureName(MainClass.MODID + ":KroostylBlock");
+		public static Block KroostylBricks = new KroostylBlocksClass(Material.rock).setBlockName("KroostylBricks").setBlockTextureName(MainClass.MODID + ":KroostylBricks");
+		public static Block KroostylChiseledBricks = new KroostylBlocksClass(Material.rock).setBlockName("KroostylChiseledBricks").setBlockTextureName(MainClass.MODID + ":KroostylChiseledBricks");
+		public static Block KroostylBrickStairs = new KroostylStairsClass(KroostylBricks, 0).setBlockName("KroostylBrickStairs");
+
+		public static Block OrangePlanks = new PlanksClass(Material.wood).setBlockName("OrangePlanks").setBlockTextureName(MainClass.MODID + ":OrangePlanks");
+		
+		//Trees
+		public static Block Log = new LogClass().setBlockName("Log");
+		public static Block Leaves = new LeavesClass().setBlockName("Leaves");
+		public static Block Sapling = new SaplingClass().setBlockName("Sapling");
+		
+		//Items
+		
+		//Seeds
+		public static Item BroccoliSeeds = new SeedsClass(BroccoliCrop, Blocks.farmland).setUnlocalizedName("BroccoliSeeds").setTextureName(MainClass.MODID + ":BroccoliSeeds");
+		public static Item OnionSeeds = new SeedsClass(OnionCrop, Blocks.farmland).setUnlocalizedName("OnionSeeds").setTextureName(MainClass.MODID + ":OnionSeeds");
+		public static Item BeetrootSeeds = new SeedsClass(BeetrootCrop, Blocks.farmland).setUnlocalizedName("BeetrootSeeds").setTextureName(MainClass.MODID + ":BeetrootSeeds");
+		public static Item CauliflowerSeeds = new SeedsClass(CauliflowerCrop, Blocks.farmland).setUnlocalizedName("CauliflowerSeeds").setTextureName(MainClass.MODID + ":CauliflowerSeeds");
+		public static Item LeekSeeds = new SeedsClass(LeekCrop, Blocks.farmland).setUnlocalizedName("LeekSeeds").setTextureName(MainClass.MODID + ":LeekSeeds");
+		public static Item GarlicSeeds = new SeedsClass(GarlicCrop, Blocks.farmland).setUnlocalizedName("GarlicSeeds").setTextureName(MainClass.MODID + ":GarlicSeeds");
+		
+		//Veg
+		public static Item Broccoli = new VegClass(2, 0.3F, false).setUnlocalizedName("Broccoli").setTextureName(MainClass.MODID + ":Broccoli");
+		public static Item Onion = new VegClass(2, 0.3F, false).setUnlocalizedName("Onion").setTextureName(MainClass.MODID + ":Onion");
+		public static Item Beetroot = new VegClass(2, 0.3F, false).setUnlocalizedName("Beetroot").setTextureName(MainClass.MODID + ":Beetroot");
+		public static Item Cauliflower = new VegClass(2, 0.3F, false).setUnlocalizedName("Cauliflower").setTextureName(MainClass.MODID + ":Cauliflower");
+		public static Item Leek = new VegClass(2, 0.3F, false).setUnlocalizedName("Leek").setTextureName(MainClass.MODID + ":Leek");
+		public static Item Garlic = new VegClass(2, 0.3F, false).setUnlocalizedName("Garlic").setTextureName(MainClass.MODID + ":Garlic");
+		
+		public static Item BoiledBroccoli = new VegClass(6, 1.2F, false).setUnlocalizedName("BoiledBroccoli").setTextureName(MainClass.MODID + ":BoiledBroccoli");
+		
+		public static Item OrangeBroccoli = new VegClass(20, 1.2F, false).setUnlocalizedName("OrangeBroccoli").setTextureName(MainClass.MODID + ":OrangeBroccoli");
+		
+		//Fruit
+		public static Item Orange = new FruitClass(4, 0.8F, false).setUnlocalizedName("Orange").setTextureName(MainClass.MODID + ":Orange");
+		public static Item Banana = new FruitClass(4, 0.8F, false).setUnlocalizedName("Banana").setTextureName(MainClass.MODID + ":Banana");
+		public static Item Mango = new FruitClass(4, 0.8F, false).setUnlocalizedName("Mango").setTextureName(MainClass.MODID + ":Mango");
+		
+		//Ingots & Gems
+		public static Item Kroostyl = new KroostylClass().setUnlocalizedName("Kroostyl");
+		
+		//Tools
+		public static Item KroostylAxe = new KroostylAxeClass(KroostylMaterial).setUnlocalizedName("KroostylAxe");
+		public static Item KroostylPickaxe = new KroostylPickaxeClass(KroostylMaterial).setUnlocalizedName("KroostylPickaxe");
+		public static Item KroostylShovel = new KroostylShovelClass(KroostylMaterial).setUnlocalizedName("KroostylShovel");
+		public static Item KroostylHoe = new KroostylHoeClass(KroostylMaterial).setUnlocalizedName("KroostylHoe");
+		public static Item KroostylSword = new KroostylSwordClass(KroostylMaterial).setUnlocalizedName("KroostylSword");
+		
+		//Armour
+		public static Item KroostylHelmet = new KroostylArmour(KroostylArmour, helmetID, 0).setUnlocalizedName("KroostylHelmet");
+		public static Item KroostylChestplate = new KroostylArmour(KroostylArmour, chestplateID, 1).setUnlocalizedName("KroostylChestplate");
+		public static Item KroostylLeggings = new KroostylArmour(KroostylArmour, leggingsID, 2).setUnlocalizedName("KroostylLeggings");
+		public static Item KroostylBoots = new KroostylArmour(KroostylArmour, bootsID, 3).setUnlocalizedName("KroostylBoots");
+		
+		public static Item ReinforcedKroostylHelmet = new ReinforcedKroostylArmour(ReinforcedKroostylArmour, helmetID, 0).setUnlocalizedName("ReinforcedKroostylHelmet");
+		public static Item ReinforcedKroostylChestplate = new ReinforcedKroostylArmour(ReinforcedKroostylArmour, chestplateID, 1).setUnlocalizedName("ReinforcedKroostylChestplate");
+		public static Item ReinforcedKroostylLeggings = new ReinforcedKroostylArmour(ReinforcedKroostylArmour, leggingsID, 2).setUnlocalizedName("ReinforcedKroostylLeggings");
+		public static Item ReinforcedKroostylBoots = new ReinforcedKroostylArmour(ReinforcedKroostylArmour, bootsID, 3).setUnlocalizedName("ReinforcedKroostylBoots");
+		
+	
+	@EventHandler
+	public void PreInit(FMLPreInitializationEvent preEvent){
+			
+	}
+		
+	@EventHandler
+	public void Init(FMLInitializationEvent Event){
+		
+		//Register Items
+		
+		
+		//Blocks
+		
+		//Crops
+		GameRegistry.registerBlock(BroccoliCrop, "BroccoliCrop");
+		GameRegistry.registerBlock(OnionCrop, "OnionCrop");
+		GameRegistry.registerBlock(BeetrootCrop, "BeetrootCrop");
+		GameRegistry.registerBlock(CauliflowerCrop, "CauliflowerCrop");
+		GameRegistry.registerBlock(LeekCrop, "LeekCrop");
+		GameRegistry.registerBlock(GarlicCrop, "GarlicCrop");
+		
+		//Veg
+		GameRegistry.registerBlock(CompressedBroccoli, "CompressedBroccoli");
+		GameRegistry.registerBlock(CompressedOnion, "CompressedOnion");;
+		GameRegistry.registerBlock(CompressedBeetroot, "CompressedBeetroot");
+		GameRegistry.registerBlock(CompressedCauliflower, "CompressedCauliflower");
+		GameRegistry.registerBlock(CompressedLeek, "CompressedLeek");
+		GameRegistry.registerBlock(CompressedGarlic, "CompressedGarlic");
+		
+		//Ores
+		GameRegistry.registerBlock(KroostylOre, "KroostylOre");
+		
+		//Decorative Blocks
+		GameRegistry.registerBlock(KroostylBlock, "KroostylBlock");
+		GameRegistry.registerBlock(KroostylBricks, "KroostylBricks");
+		GameRegistry.registerBlock(KroostylChiseledBricks, "KroostylChiseledBricks");
+		GameRegistry.registerBlock(KroostylBrickStairs, "KroostylBrickStairs");
+
+		GameRegistry.registerBlock(OrangePlanks, "OrangePlanks");
+		
+		//Trees
+		GameRegistry.registerBlock(Log, LogBlockClass.class, Log.getUnlocalizedName().substring(5));
+		GameRegistry.registerBlock(Leaves, LeavesBlockClass.class, Leaves.getUnlocalizedName().substring(5));
+		GameRegistry.registerBlock(Sapling, SaplingBlockClass.class, Sapling.getUnlocalizedName().substring(5));
+		
+		
+		//Items
+		
+		//Seeds
+		GameRegistry.registerItem(BroccoliSeeds, "BroccoliSeeds");
+		GameRegistry.registerItem(OnionSeeds, "OnionSeeds");
+		GameRegistry.registerItem(BeetrootSeeds, "BeetrootSeeds");
+		GameRegistry.registerItem(CauliflowerSeeds, "CauliflowerSeeds");
+		GameRegistry.registerItem(LeekSeeds, "LeekSeeds");
+		GameRegistry.registerItem(GarlicSeeds, "GarlicSeeds");
+		
+		//Veg
+		GameRegistry.registerItem(Broccoli, "Broccoli");
+		GameRegistry.registerItem(Onion, "Onion");
+		GameRegistry.registerItem(Beetroot, "Beetroot");
+		GameRegistry.registerItem(Cauliflower, "Cauliflower");
+		GameRegistry.registerItem(Leek, "Leek");
+		GameRegistry.registerItem(Garlic, "Garlic");
+
+		GameRegistry.registerItem(BoiledBroccoli, "BoiledBroccoli");
+		GameRegistry.registerItem(OrangeBroccoli, "OrangeBroccoli");
+		
+		//Fruit
+		GameRegistry.registerItem(Orange, "Orange");
+		GameRegistry.registerItem(Banana, "Banana");
+		GameRegistry.registerItem(Mango, "Mango");
+		
+		//Ingots & Gems
+		GameRegistry.registerItem(Kroostyl, "Kroostyl");
+		
+		//Tools
+		GameRegistry.registerItem(KroostylAxe, "KroostylAxe");
+		GameRegistry.registerItem(KroostylPickaxe, "KroostylPickaxe");
+		GameRegistry.registerItem(KroostylShovel, "KroostylShovel");
+		GameRegistry.registerItem(KroostylHoe, "KroostylHoe");
+		GameRegistry.registerItem(KroostylSword, "KroostylSword");
+		
+		//Armour
+		GameRegistry.registerItem(KroostylHelmet, "KroostylHelmet");
+		GameRegistry.registerItem(KroostylChestplate, "KroostylChestplate");
+		GameRegistry.registerItem(KroostylLeggings, "KroostylLeggings");
+		GameRegistry.registerItem(KroostylBoots, "KroostylBoots");
+		
+		GameRegistry.registerItem(ReinforcedKroostylHelmet, "ReinforcedKroostylHelmet");
+		GameRegistry.registerItem(ReinforcedKroostylChestplate, "ReinforcedKroostylChestplate");
+		GameRegistry.registerItem(ReinforcedKroostylLeggings, "ReinforcedKroostylLeggings");
+		GameRegistry.registerItem(ReinforcedKroostylBoots, "ReinforcedKroostylBoots");
+		
+		
+		
+		//Achievements
+		achievementKroostyl = new Achievement("achievement.MineKroostyl", "MineKroostyl", 0, 0, KroostylOre, AchievementList.diamonds).registerStat();
+		achievementKroostylPick = new Achievement("achievement.KroostylPick", "KroostylPick", 2, 1, KroostylPickaxe, achievementKroostyl).registerStat();
+		
+		AchievementPage.registerAchievementPage(new AchievementPage("Ood's Mod", new Achievement[]{achievementKroostyl, achievementKroostylPick}));
+		
+		FMLCommonHandler.instance().bus().register(new KroostylMineEventClass());
+		FMLCommonHandler.instance().bus().register(new KroostylCraftEventClass());
+		
+		
+		
+		//World Generation
+		GameRegistry.registerWorldGenerator(KroostylWorldGen, 1);
+		
+		//Ore Registration
+		OreDictionary.registerOre("oreKroostyl", new ItemStack(KroostylOre));
+		OreDictionary.registerOre("gemKroostyl", new ItemStack(Kroostyl));
+		
+		
+		
+		//Crafting
+		
+		//Shaped Recipes
+		GameRegistry.addRecipe(new ItemStack(CompressedBroccoli, 1), new Object[] {"XXX", "XXX", "XXX", 'X', Broccoli});
+		GameRegistry.addRecipe(new ItemStack(CompressedOnion, 1), new Object[] {"XXX", "XXX", "XXX", 'X', Onion});
+		GameRegistry.addRecipe(new ItemStack(CompressedBeetroot, 1), new Object[] {"XXX", "XXX", "XXX", 'X', Beetroot});
+		GameRegistry.addRecipe(new ItemStack(CompressedCauliflower, 1), new Object[] {"XXX", "XXX", "XXX", 'X', Cauliflower});
+		GameRegistry.addRecipe(new ItemStack(CompressedLeek, 1), new Object[] {"XXX", "XXX", "XXX", 'X', Leek});
+		GameRegistry.addRecipe(new ItemStack(CompressedGarlic, 1), new Object[] {"XXX", "XXX", "XXX", 'X', Garlic});
+		
+		GameRegistry.addRecipe(new ItemStack(KroostylBlock, 1), new Object[] {"XXX", "XXX", "XXX", 'X', Kroostyl});
+		GameRegistry.addRecipe(new ItemStack(KroostylBricks, 8), new Object[] {"YYY", "YXY", "YYY", 'X', Kroostyl, 'Y', Blocks.stonebrick});
+		GameRegistry.addRecipe(new ItemStack(KroostylBricks, 64), new Object[] {"YYY", "YXY", "YYY", 'X', KroostylBlock, 'Y', Blocks.stonebrick});
+		GameRegistry.addRecipe(new ItemStack(KroostylBrickStairs, 4), new Object[] {"  X", " XX", "XXX", 'X', KroostylBricks});
+		
+		GameRegistry.addRecipe(new ItemStack(KroostylAxe, 1), new Object[] {"XX ", "XY ", " Y ", 'X', Kroostyl, 'Y', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(KroostylPickaxe, 1), new Object[] {"XXX", " Y ", " Y ", 'X', Kroostyl, 'Y', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(KroostylShovel, 1), new Object[] {" X ", " Y ", " Y ", 'X', Kroostyl, 'Y', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(KroostylHoe, 1), new Object[] {"XX ", " Y ", " Y ", 'X', Kroostyl, 'Y', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(KroostylSword, 1), new Object[] {" X ", " X ", " Y ", 'X', Kroostyl, 'Y', Items.stick});
+		
+		GameRegistry.addRecipe(new ItemStack(KroostylHelmet, 1), new Object[] {"XXX", "X X", 'X', Kroostyl});
+		GameRegistry.addRecipe(new ItemStack(KroostylChestplate, 1), new Object[] {"X X", "XXX", "XXX", 'X', Kroostyl});
+		GameRegistry.addRecipe(new ItemStack(KroostylLeggings, 1), new Object[] {"XXX", "X X", "X X", 'X', Kroostyl});
+		GameRegistry.addRecipe(new ItemStack(KroostylBoots, 1), new Object[] {"X X", "X X", 'X', Kroostyl});
+		
+		//Shapeless Recipes
+		GameRegistry.addShapelessRecipe(new ItemStack(Broccoli, 9), CompressedBroccoli);
+		GameRegistry.addShapelessRecipe(new ItemStack(BroccoliSeeds, 1), Broccoli);
+		
+		GameRegistry.addShapelessRecipe(new ItemStack(Onion, 9), CompressedOnion);
+		GameRegistry.addShapelessRecipe(new ItemStack(OnionSeeds, 1), Onion);
+		
+		GameRegistry.addShapelessRecipe(new ItemStack(Beetroot, 9), CompressedBeetroot);
+		GameRegistry.addShapelessRecipe(new ItemStack(BeetrootSeeds, 1), Beetroot);
+		
+		GameRegistry.addShapelessRecipe(new ItemStack(Cauliflower, 9), CompressedCauliflower);
+		GameRegistry.addShapelessRecipe(new ItemStack(CauliflowerSeeds, 1), Cauliflower);
+		
+		GameRegistry.addShapelessRecipe(new ItemStack(Leek, 9), CompressedLeek);
+		GameRegistry.addShapelessRecipe(new ItemStack(LeekSeeds, 1), Leek);
+		
+		GameRegistry.addShapelessRecipe(new ItemStack(Garlic, 9), CompressedGarlic);
+		GameRegistry.addShapelessRecipe(new ItemStack(GarlicSeeds, 1), Garlic);
+		
+		GameRegistry.addShapelessRecipe(new ItemStack(Kroostyl, 9), KroostylBlock);
+
+		GameRegistry.addShapelessRecipe(new ItemStack(KroostylChiseledBricks, 1), KroostylBricks);
+		GameRegistry.addShapelessRecipe(new ItemStack(KroostylBricks, 1), KroostylChiseledBricks);
+		
+		GameRegistry.addShapelessRecipe(new ItemStack(OrangePlanks, 4), Log);
+		
+		GameRegistry.addShapelessRecipe(new ItemStack(ReinforcedKroostylHelmet, 1), KroostylHelmet, Items.nether_star);
+		GameRegistry.addShapelessRecipe(new ItemStack(ReinforcedKroostylChestplate, 1), KroostylChestplate, Items.nether_star);
+		GameRegistry.addShapelessRecipe(new ItemStack(ReinforcedKroostylLeggings, 1), KroostylLeggings, Items.nether_star);
+		GameRegistry.addShapelessRecipe(new ItemStack(ReinforcedKroostylBoots, 1), KroostylBoots, Items.nether_star);
+		
+		//Smelting Recipes
+		GameRegistry.addSmelting(Broccoli, new ItemStack(BoiledBroccoli, 1), 0.00F);
+		GameRegistry.addSmelting(KroostylOre, new ItemStack(Kroostyl, 1), 2.50F);
+		
+		
+		
+		//Seed Dropping
+		MinecraftForge.addGrassSeed(new ItemStack(BroccoliSeeds), 1);
+		MinecraftForge.addGrassSeed(new ItemStack(OnionSeeds), 1);
+		MinecraftForge.addGrassSeed(new ItemStack(BeetrootSeeds), 1);
+		MinecraftForge.addGrassSeed(new ItemStack(CauliflowerSeeds), 1);
+		MinecraftForge.addGrassSeed(new ItemStack(LeekSeeds), 1);
+		MinecraftForge.addGrassSeed(new ItemStack(GarlicSeeds), 1);
+		
+	}
+	
+	@EventHandler
+	public void PostInit(FMLPostInitializationEvent postEvent){
+		
+	}
+	
+}
