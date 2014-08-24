@@ -1,9 +1,0 @@
-package oodmod;
-
-public class CommonProxy {
-	
-	public static void renderStuff() {
-		
-	}
-
-}
