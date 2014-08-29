@@ -1,3 +1,4 @@
 {
-    "records.Sandstorm": {"catagory": "record", "sounds": [{"name": "records/Sandstorm", "stream": true}]}
+    "records.Sandstorm": {"catagory": "record", "sounds": [{"name": "records/Sandstorm", "stream": true}]},
+    "records.Crispy": {"catagory": "record", "sounds": [{"name": "records/Crispy", "stream": true}]}
 }
