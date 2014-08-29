@@ -3,5 +3,9 @@
     "records.Sandstorm": {"catagory": "record", "sounds": [{"name": "records/Sandstorm", "stream": true}]},
     "records.Bangarang": {"catagory": "record", "sounds": [{"name": "records/Bangarang", "stream": true}]},
     "records.TryItOut": {"catagory": "record", "sounds": [{"name": "records/TryItOut", "stream": true}]},
-    "records.GetLucky": {"catagory": "record", "sounds": [{"name": "records/GetLucky", "stream": true}]}
+    "records.GetLucky": {"catagory": "record", "sounds": [{"name": "records/GetLucky", "stream": true}]},
+    "records.StayinAlive": {"catagory": "record", "sounds": [{"name": "records/StayinAlive", "stream": true}]},
+    "records.Watercolour": {"catagory": "record", "sounds": [{"name": "records/Watercolour", "stream": true}]},
+    "records.MamboNo5": {"catagory": "record", "sounds": [{"name": "records/MamboNo5", "stream": true}]},
+    "records.ImGonnaBe": {"catagory": "record", "sounds": [{"name": "records/ImGonnaBe", "stream": true}]}
 }

@@ -2,12 +2,12 @@
 {
   "modid": "oodmod",
   "name": "Ood's Mod",
-  "version": "1.90",
+  "version": "1.91",
   "description": "",
   "mcversion": "${mcversion}",
   "authorList": ["Ood"],
   "url": "",
-  "credits": "Made by Ood with help from Kroos and Learwin",
+  "credits": "Code by Ood. Textures by Ood, Drullkus & Learwin. Extra help from Kroos & Poppy.",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []

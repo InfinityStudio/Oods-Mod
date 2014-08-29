@@ -81,11 +81,11 @@ item.ReinforcedKroostylChestplate.name=Reinforced Kroostyl Chestplate
 item.ReinforcedKroostylLeggings.name=Reinforced Kroostyl Leggings
 item.ReinforcedKroostylBoots.name=Reinforced Kroostyl Boots
 
-item.RecordSandstorm.name=Music Disc
-item.RecordSandstorm.desc=Darude - Sandstorm
-
 item.RecordCrispy.name=Music Disc
 item.RecordCrispy.desc=Crispy Pops - Derp Song
+
+item.RecordSandstorm.name=Music Disc
+item.RecordSandstorm.desc=Darude - Sandstorm
 
 item.RecordBangarang.name=Music Disc
 item.RecordBangarang.desc=Skrillex - Bangarang
@@ -95,3 +95,16 @@ item.RecordTryItOut.desc=Skrillex - Imma Try It Out
 
 item.RecordGetLucky.name=Music Disc
 item.RecordGetLucky.desc=Daft Punk - Get Lucky
+
+item.RecordStayinAlive.name=Music Disc
+item.RecordStayinAlive.desc=Bee Gees - Stayin' Alive
+
+item.RecordWatercolour.name=Music Disc
+item.RecordWatercolour.desc=Pendulum - Watercolour
+
+item.RecordMamboNo5.name=Music Disc
+item.RecordMamboNo5.desc=Lou Bega - Mambo No. 5
+
+item.RecordImGonnaBe.name=Music Disc
+item.RecordImGonnaBe.desc=The Proclaimers - I'm Gonna Be (500 Miles)
+

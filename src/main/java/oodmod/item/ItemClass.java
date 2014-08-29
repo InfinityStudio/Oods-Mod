@@ -88,6 +88,10 @@ public class ItemClass {
 		public static Item RecordBangarang;
 		public static Item RecordTryItOut;
 		public static Item RecordGetLucky;
+		public static Item RecordStayinAlive;
+		public static Item RecordWatercolour;
+		public static Item RecordMamboNo5;
+		public static Item RecordImGonnaBe;
 	
 	public static void initItems(){
 		
@@ -143,6 +147,10 @@ public class ItemClass {
 		RecordBangarang = new RecordClass("Bangarang").setUnlocalizedName("RecordBangarang");
 		RecordTryItOut = new RecordClass("TryItOut").setUnlocalizedName("RecordTryItOut");
 		RecordGetLucky = new RecordClass("GetLucky").setUnlocalizedName("RecordGetLucky");
+		RecordStayinAlive = new RecordClass("StayinAlive").setUnlocalizedName("RecordStayinAlive");
+		RecordWatercolour = new RecordClass("Watercolour").setUnlocalizedName("RecordWatercolour");
+		RecordMamboNo5 = new RecordClass("MamboNo5").setUnlocalizedName("RecordMamboNo5");
+		RecordImGonnaBe = new RecordClass("ImGonnaBe").setUnlocalizedName("RecordImGonnaBe");
 		
 	}
 	
@@ -200,6 +208,10 @@ public class ItemClass {
 		GameRegistry.registerItem(RecordBangarang, "RecordBangarang");
 		GameRegistry.registerItem(RecordTryItOut, "RecordTryItOut");
 		GameRegistry.registerItem(RecordGetLucky, "RecordGetLucky");
+		GameRegistry.registerItem(RecordStayinAlive, "RecordStayinAlive");
+		GameRegistry.registerItem(RecordWatercolour, "RecordWatercolour");
+		GameRegistry.registerItem(RecordMamboNo5, "RecordMamboNo5");
+		GameRegistry.registerItem(RecordImGonnaBe, "RecordImGonnaBe");
 				
 	}
 	
