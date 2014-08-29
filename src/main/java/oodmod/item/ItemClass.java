@@ -85,6 +85,9 @@ public class ItemClass {
 		//Records
 		public static Item RecordCrispy;
 		public static Item RecordSandstorm;
+		public static Item RecordBangarang;
+		public static Item RecordTryItOut;
+		public static Item RecordGetLucky;
 	
 	public static void initItems(){
 		
@@ -137,6 +140,9 @@ public class ItemClass {
 		//Records
 		RecordCrispy = new RecordClass("Crispy").setUnlocalizedName("RecordCrispy");
 		RecordSandstorm = new RecordClass("Sandstorm").setUnlocalizedName("RecordSandstorm");
+		RecordBangarang = new RecordClass("Bangarang").setUnlocalizedName("RecordBangarang");
+		RecordTryItOut = new RecordClass("TryItOut").setUnlocalizedName("RecordTryItOut");
+		RecordGetLucky = new RecordClass("GetLucky").setUnlocalizedName("RecordGetLucky");
 		
 	}
 	
@@ -191,6 +197,9 @@ public class ItemClass {
 		//Records
 		GameRegistry.registerItem(RecordCrispy, "RecordCrispy");
 		GameRegistry.registerItem(RecordSandstorm, "RecordSandstorm");
+		GameRegistry.registerItem(RecordBangarang, "RecordBangarang");
+		GameRegistry.registerItem(RecordTryItOut, "RecordTryItOut");
+		GameRegistry.registerItem(RecordGetLucky, "RecordGetLucky");
 				
 	}
 	

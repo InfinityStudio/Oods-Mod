@@ -1,4 +1,7 @@
 {
+    "records.Crispy": {"catagory": "record", "sounds": [{"name": "records/Crispy", "stream": true}]},
     "records.Sandstorm": {"catagory": "record", "sounds": [{"name": "records/Sandstorm", "stream": true}]},
-    "records.Crispy": {"catagory": "record", "sounds": [{"name": "records/Crispy", "stream": true}]}
+    "records.Bangarang": {"catagory": "record", "sounds": [{"name": "records/Bangarang", "stream": true}]},
+    "records.TryItOut": {"catagory": "record", "sounds": [{"name": "records/TryItOut", "stream": true}]},
+    "records.GetLucky": {"catagory": "record", "sounds": [{"name": "records/GetLucky", "stream": true}]}
 }

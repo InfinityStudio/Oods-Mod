@@ -86,3 +86,12 @@ item.RecordSandstorm.desc=Darude - Sandstorm
 
 item.RecordCrispy.name=Music Disc
 item.RecordCrispy.desc=Crispy Pops - Derp Song
+
+item.RecordBangarang.name=Music Disc
+item.RecordBangarang.desc=Skrillex - Bangarang
+
+item.RecordTryItOut.name=Music Disc
+item.RecordTryItOut.desc=Skrillex - Imma Try It Out
+
+item.RecordGetLucky.name=Music Disc
+item.RecordGetLucky.desc=Daft Punk - Get Lucky
