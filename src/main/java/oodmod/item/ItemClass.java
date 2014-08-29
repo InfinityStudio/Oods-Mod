@@ -81,6 +81,9 @@ public class ItemClass {
 		public static Item ReinforcedKroostylChestplate;
 		public static Item ReinforcedKroostylLeggings;
 		public static Item ReinforcedKroostylBoots;
+		
+		//Records
+		public static Item RecordSandstorm;
 	
 	public static void initItems(){
 		
@@ -129,6 +132,9 @@ public class ItemClass {
 		ReinforcedKroostylChestplate = new ReinforcedKroostylArmour(ReinforcedKroostylArmour, chestplateID, 1).setUnlocalizedName("ReinforcedKroostylChestplate");
 		ReinforcedKroostylLeggings = new ReinforcedKroostylArmour(ReinforcedKroostylArmour, leggingsID, 2).setUnlocalizedName("ReinforcedKroostylLeggings");
 		ReinforcedKroostylBoots = new ReinforcedKroostylArmour(ReinforcedKroostylArmour, bootsID, 3).setUnlocalizedName("ReinforcedKroostylBoots");
+		
+		//Records
+		RecordSandstorm = new RecordClass("Sandstorm").setUnlocalizedName("RecordSandstorm");
 		
 	}
 	
@@ -179,6 +185,9 @@ public class ItemClass {
 		GameRegistry.registerItem(ReinforcedKroostylChestplate, "ReinforcedKroostylChestplate");
 		GameRegistry.registerItem(ReinforcedKroostylLeggings, "ReinforcedKroostylLeggings");
 		GameRegistry.registerItem(ReinforcedKroostylBoots, "ReinforcedKroostylBoots");
+		
+		//Records
+		GameRegistry.registerItem(RecordSandstorm, "RecordSandstorm");
 				
 	}
 	
