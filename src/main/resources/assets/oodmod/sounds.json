@@ -1,11 +1,3 @@
 {
-  "records.Sandstorm": {
-    "category": "record",
-    "sounds": [
-      {
-        "name": "records/Sandstorm",
-        "stream": true
-      }
-    ]
-  }
+    "records.Sandstorm": {"catagory": "record", "sounds": [{"name": "records/Sandstorm", "stream": true}]}
 }
