@@ -22,7 +22,7 @@ public class ItemClass
     	initItems();
     	registerItems();
     	
-    }
+	}
 	
 	//Materials
 	public static ToolMaterial KroostylMaterial = EnumHelper.addToolMaterial("Kroostyl", 4, 2000, 10.0F, 8.0F, 10);
