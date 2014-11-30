@@ -54,17 +54,6 @@ public class ItemClass
 	public static Item KroostylAxe;
 	public static Item KroostylHoe;
 	public static Item KroostylSword;
-		
-	//Records
-	public static Item RecordCrispy;
-	public static Item RecordSandstorm;
-	public static Item RecordBangarang;
-	public static Item RecordTryItOut;
-	public static Item RecordGetLucky;
-	public static Item RecordStayinAlive;
-	public static Item RecordWatercolour;
-	public static Item RecordMamboNo5;
-	public static Item RecordImGonnaBe;
 	
 	public static void initItems()
 	{
@@ -96,17 +85,6 @@ public class ItemClass
 		KroostylAxe = new KroostylAxeClass(KroostylMaterial).setUnlocalizedName("KroostylAxe");
 		KroostylHoe = new KroostylHoeClass(KroostylMaterial).setUnlocalizedName("KroostylHoe");
 		KroostylSword = new KroostylSwordClass(KroostylMaterial).setUnlocalizedName("KroostylSword");
-			
-		//Records
-		RecordCrispy = new RecordClass("Crispy").setUnlocalizedName("RecordCrispy");
-		RecordSandstorm = new RecordClass("Sandstorm").setUnlocalizedName("RecordSandstorm");
-		RecordBangarang = new RecordClass("Bangarang").setUnlocalizedName("RecordBangarang");
-		RecordTryItOut = new RecordClass("TryItOut").setUnlocalizedName("RecordTryItOut");
-		RecordGetLucky = new RecordClass("GetLucky").setUnlocalizedName("RecordGetLucky");
-		RecordStayinAlive = new RecordClass("StayinAlive").setUnlocalizedName("RecordStayinAlive");
-		RecordWatercolour = new RecordClass("Watercolour").setUnlocalizedName("RecordWatercolour");
-		RecordMamboNo5 = new RecordClass("MamboNo5").setUnlocalizedName("RecordMamboNo5");
-		RecordImGonnaBe = new RecordClass("ImGonnaBe").setUnlocalizedName("RecordImGonnaBe");
 		
 	}
 	
@@ -141,17 +119,6 @@ public class ItemClass
 		GameRegistry.registerItem(KroostylAxe, "KroostylAxe");
 		GameRegistry.registerItem(KroostylHoe, "KroostylHoe");
 		GameRegistry.registerItem(KroostylSword, "KroostylSword");
-		
-		//Records
-		GameRegistry.registerItem(RecordCrispy, "RecordCrispy");
-		GameRegistry.registerItem(RecordSandstorm, "RecordSandstorm");
-		GameRegistry.registerItem(RecordBangarang, "RecordBangarang");
-		GameRegistry.registerItem(RecordTryItOut, "RecordTryItOut");
-		GameRegistry.registerItem(RecordGetLucky, "RecordGetLucky");
-		GameRegistry.registerItem(RecordStayinAlive, "RecordStayinAlive");
-		GameRegistry.registerItem(RecordWatercolour, "RecordWatercolour");
-		GameRegistry.registerItem(RecordMamboNo5, "RecordMamboNo5");
-		GameRegistry.registerItem(RecordImGonnaBe, "RecordImGonnaBe");
 				
 	}
 	

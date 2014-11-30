@@ -33,7 +33,7 @@ public class MainClass
 	public static CommonProxy proxy;
 	
 	@Instance(MainClass.MODID)
-    public static MainClass modInstance;
+	public static MainClass modInstance;
 	
 	//Mod Info
 	public static final String MODID = "oodmod";
@@ -56,7 +56,7 @@ public class MainClass
 	
 		BlockClass.blockRegistry();
 		ItemClass.itemRegistry();
-    	CraftingClass.craftingManager();
+		CraftingClass.craftingManager();
 		
 	}
 		
