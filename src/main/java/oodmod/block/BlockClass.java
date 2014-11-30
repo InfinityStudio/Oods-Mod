@@ -50,8 +50,8 @@ public class BlockClass
     {
     	
     	//Crops
-  		BroccoliCrop = new BroccoliCropClass().setUnlocalizedName("BroccoliCrop");
-  		OnionCrop = new OnionCropClass().setUnlocalizedName("OnionCrop");
+    	BroccoliCrop = new BroccoliCropClass().setUnlocalizedName("BroccoliCrop");
+    	OnionCrop = new OnionCropClass().setUnlocalizedName("OnionCrop");
   		BeetrootCrop = new BeetrootCropClass().setUnlocalizedName("BeetrootCrop");
   		CauliflowerCrop = new CauliflowerCropClass().setUnlocalizedName("CauliflowerCrop");
   		LeekCrop = new LeekCropClass().setUnlocalizedName("LeekCrop");
