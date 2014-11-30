@@ -4,9 +4,12 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import oodmod.main.MainClass;
 
-public class CompressedVegClass extends Block {
+public class CompressedVegClass extends Block
+{
 
-	public CompressedVegClass() {
+	public CompressedVegClass()
+	{
+		
 		super(Material.grass);
 		
 		setCreativeTab(MainClass.OodModTab);

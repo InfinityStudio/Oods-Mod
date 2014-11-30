@@ -4,9 +4,12 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import oodmod.main.MainClass;
 
-public class KroostylBlocksClass extends Block {
+public class KroostylBlocksClass extends Block
+{
 
-	public KroostylBlocksClass() {
+	public KroostylBlocksClass()
+	{
+		
 		super(Material.rock);
 		
 		setCreativeTab(MainClass.OodModTab);

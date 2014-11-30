@@ -4,14 +4,17 @@ import oodmod.item.ItemClass;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 
-public class OodModTab extends CreativeTabs {
+public class OodModTab extends CreativeTabs
+{
 
-	public OodModTab(int arg0, String arg1) {
-		super(arg0, arg1);
+	public OodModTab(int integer, String arg)
+	{
+		super(integer, arg);
 	}
 
 	@Override
-	public Item getTabIconItem() {
+	public Item getTabIconItem()
+	{
 		return ItemClass.BoiledBroccoli;
 	}
 

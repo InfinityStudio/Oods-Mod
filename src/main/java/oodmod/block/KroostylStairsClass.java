@@ -4,10 +4,14 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockStairs;
 import oodmod.main.MainClass;
 
-public class KroostylStairsClass extends BlockStairs {
+public class KroostylStairsClass extends BlockStairs
+{
 
-	public KroostylStairsClass(Block block, int arg1) {
-		super(block, arg1);
+	
+	public KroostylStairsClass(Block block, int integer)
+	{
+		
+		super(block.getDefaultState());
 
 		setCreativeTab(MainClass.OodModTab);
 		setHardness(8.0F);

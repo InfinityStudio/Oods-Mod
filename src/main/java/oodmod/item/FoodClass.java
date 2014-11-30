@@ -1,11 +1,14 @@
-package oodmod.item.food;
+package oodmod.item;
 
 import net.minecraft.item.ItemFood;
 import oodmod.main.MainClass;
 
-public class VegClass extends ItemFood {
+public class FoodClass extends ItemFood
+{
 
-	public VegClass(int hunger, float saturation, boolean isWolfFood) {
+	public FoodClass(int hunger, float saturation, boolean isWolfFood)
+	{
+		
 		super(hunger, saturation, isWolfFood);
 		
 		setCreativeTab(MainClass.OodModTab);

@@ -3,13 +3,15 @@ package oodmod.item.tools;
 import oodmod.main.MainClass;
 import net.minecraft.item.ItemAxe;
 
-public class KroostylAxeClass extends ItemAxe {
+public class KroostylAxeClass extends ItemAxe
+{
 
-	public KroostylAxeClass(ToolMaterial material) {
+	public KroostylAxeClass(ToolMaterial material)
+	{
+		
 		super(material);
 		
 		setCreativeTab(MainClass.OodModTab);
-		setTextureName(MainClass.MODID + ":KroostylAxe");
 		
 	}
 
