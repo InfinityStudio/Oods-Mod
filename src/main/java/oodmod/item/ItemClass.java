@@ -1,5 +1,7 @@
 package oodmod.item;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
@@ -12,6 +14,9 @@ import oodmod.item.tools.KroostylHoeClass;
 import oodmod.item.tools.KroostylPickaxeClass;
 import oodmod.item.tools.KroostylShovelClass;
 import oodmod.item.tools.KroostylSwordClass;
+import oodmod.item.armour.KroostylArmour;
+import oodmod.item.armour.ReinforcedKroostylArmour;
+import oodmod.main.MainClass;
 
 public class ItemClass
 {
@@ -23,10 +28,18 @@ public class ItemClass
     	registerItems();
     	
 	}
+
+	//Armour IDs
+	public static int helmetID;
+	public static int chestplateID;
+	public static int leggingsID;
+	public static int bootsID;
 	
 	//Materials
 	public static ToolMaterial KroostylMaterial = EnumHelper.addToolMaterial("Kroostyl", 4, 2000, 10.0F, 8.0F, 10);
-	
+	public static ArmorMaterial KroostylArmour = EnumHelper.addArmorMaterial("Kroostyl", MainClass.MODID + ":textures/models/armor/KroostylArmour", 66, new int[] {6, 16, 12, 6}, 10);
+	public static ArmorMaterial ReinforcedKroostylArmour = EnumHelper.addArmorMaterial("ReinforcedKroostyl", MainClass.MODID + ":textures/models/armor/ReinforcedKroostylArmour", 264, new int[] {8, 18, 14, 8}, 10);
+
 	//Seeds
 	public static Item BroccoliSeeds;
 	public static Item OnionSeeds;
@@ -54,6 +67,17 @@ public class ItemClass
 	public static Item KroostylAxe;
 	public static Item KroostylHoe;
 	public static Item KroostylSword;
+	
+	//Armour
+	public static Item KroostylHelmet;
+	public static Item KroostylChestplate;
+	public static Item KroostylLeggings;
+	public static Item KroostylBoots;
+	
+	public static Item ReinforcedKroostylHelmet;
+	public static Item ReinforcedKroostylChestplate;
+	public static Item ReinforcedKroostylLeggings;
+	public static Item ReinforcedKroostylBoots;
 	
 	public static void initItems()
 	{
@@ -85,6 +109,17 @@ public class ItemClass
 		KroostylAxe = new KroostylAxeClass(KroostylMaterial).setUnlocalizedName("KroostylAxe");
 		KroostylHoe = new KroostylHoeClass(KroostylMaterial).setUnlocalizedName("KroostylHoe");
 		KroostylSword = new KroostylSwordClass(KroostylMaterial).setUnlocalizedName("KroostylSword");
+		
+		//Armour
+		KroostylHelmet = new KroostylArmour(KroostylArmour, helmetID, 0).setUnlocalizedName("KroostylHelmet");
+		KroostylChestplate = new KroostylArmour(KroostylArmour, chestplateID, 1).setUnlocalizedName("KroostylChestplate");
+		KroostylLeggings = new KroostylArmour(KroostylArmour, leggingsID, 2).setUnlocalizedName("KroostylLeggings");
+		KroostylBoots = new KroostylArmour(KroostylArmour, bootsID, 3).setUnlocalizedName("KroostylBoots");
+		
+		ReinforcedKroostylHelmet = new ReinforcedKroostylArmour(ReinforcedKroostylArmour, helmetID, 0).setUnlocalizedName("ReinforcedKroostylHelmet");
+		ReinforcedKroostylChestplate = new ReinforcedKroostylArmour(ReinforcedKroostylArmour, chestplateID, 1).setUnlocalizedName("ReinforcedKroostylChestplate");
+		ReinforcedKroostylLeggings = new ReinforcedKroostylArmour(ReinforcedKroostylArmour, leggingsID, 2).setUnlocalizedName("ReinforcedKroostylLeggings");
+		ReinforcedKroostylBoots = new ReinforcedKroostylArmour(ReinforcedKroostylArmour, bootsID, 3).setUnlocalizedName("ReinforcedKroostylBoots");
 		
 	}
 	
@@ -119,7 +154,70 @@ public class ItemClass
 		GameRegistry.registerItem(KroostylAxe, "KroostylAxe");
 		GameRegistry.registerItem(KroostylHoe, "KroostylHoe");
 		GameRegistry.registerItem(KroostylSword, "KroostylSword");
+		
+		//Armour
+		GameRegistry.registerItem(KroostylHelmet, "KroostylHelmet");
+		GameRegistry.registerItem(KroostylChestplate, "KroostylChestplate");
+		GameRegistry.registerItem(KroostylLeggings, "KroostylLeggings");
+		GameRegistry.registerItem(KroostylBoots, "KroostylBoots");
+		
+		GameRegistry.registerItem(ReinforcedKroostylHelmet, "ReinforcedKroostylHelmet");
+		GameRegistry.registerItem(ReinforcedKroostylChestplate, "ReinforcedKroostylChestplate");
+		GameRegistry.registerItem(ReinforcedKroostylLeggings, "ReinforcedKroostylLeggings");
+		GameRegistry.registerItem(ReinforcedKroostylBoots, "ReinforcedKroostylBoots");
 				
+	}
+	
+	public static void registerRenders()
+	{
+
+		//Seeds
+		registerRender(BroccoliSeeds);
+		registerRender(OnionSeeds);
+		registerRender(BeetrootSeeds);
+		registerRender(CauliflowerSeeds);
+		registerRender(LeekSeeds);
+		registerRender(GarlicSeeds);
+		
+		//Veg
+		registerRender(Broccoli);
+		registerRender(Onion);
+		registerRender(Beetroot);
+		registerRender(Cauliflower);
+		registerRender(Leek);
+		registerRender(Garlic);
+		
+		registerRender(BoiledBroccoli);
+		registerRender(OrangeBroccoli);
+		
+		//Ingots & Gems
+		registerRender(Kroostyl);
+		
+		//Tools
+		registerRender(KroostylShovel);
+		registerRender(KroostylPickaxe);
+		registerRender(KroostylAxe);
+		registerRender(KroostylHoe);
+		registerRender(KroostylSword);
+		
+		//Armour
+		registerRender(KroostylHelmet);
+		registerRender(KroostylChestplate);
+		registerRender(KroostylLeggings);
+		registerRender(KroostylBoots);
+		
+		registerRender(ReinforcedKroostylHelmet);
+		registerRender(ReinforcedKroostylChestplate);
+		registerRender(ReinforcedKroostylLeggings);
+		registerRender(ReinforcedKroostylBoots);
+		
+	}
+	
+	public static void registerRender(Item item)
+	{
+		
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, 0, new ModelResourceLocation(MainClass.MODID + ":" + item.getUnlocalizedName().substring(5), "inventory"));
+		
 	}
 	
 }

@@ -23,7 +23,6 @@ import oodmod.creativetabs.OodModTab;
 import oodmod.item.ItemClass;
 import oodmod.worldgen.OreGenerationClass;
 
-
 @Mod(modid = MainClass.MODID, name = MainClass.NAME, version = MainClass.VERSION)
 
 public class MainClass
@@ -54,9 +53,9 @@ public class MainClass
 	public void PreInit(FMLPreInitializationEvent preEvent)
 	{
 	
+		//Block and Item Registering
 		BlockClass.blockRegistry();
 		ItemClass.itemRegistry();
-		CraftingClass.craftingManager();
 		
 	}
 		
@@ -64,12 +63,15 @@ public class MainClass
 	public void Init(FMLInitializationEvent Event)
 	{
 		
+		proxy.registerRenders();
+		
+		//Crafting
+		CraftingClass.craftingManager();
+		
 		//Achievements
 		achievementKroostyl = new Achievement("achievement.MineKroostyl", "MineKroostyl", 0, 0, BlockClass.KroostylOre, AchievementList.diamonds).func_180788_c();
 		achievementKroostylPick = new Achievement("achievement.KroostylPick", "KroostylPick", 2, 1, ItemClass.KroostylPickaxe, achievementKroostyl).func_180788_c();
-		
 		AchievementPage.registerAchievementPage(new AchievementPage("Ood's Mod", new Achievement[]{achievementKroostyl, achievementKroostylPick}));
-		
 		FMLCommonHandler.instance().bus().register(new KroostylMineEventClass());
 		FMLCommonHandler.instance().bus().register(new KroostylCraftEventClass());
 		

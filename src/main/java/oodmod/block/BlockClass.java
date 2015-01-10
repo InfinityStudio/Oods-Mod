@@ -2,6 +2,9 @@ package oodmod.block;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.resources.model.ModelResourceLocation;
+import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import oodmod.block.crop.BeetrootCropClass;
 import oodmod.block.crop.BroccoliCropClass;
@@ -9,6 +12,7 @@ import oodmod.block.crop.CauliflowerCropClass;
 import oodmod.block.crop.GarlicCropClass;
 import oodmod.block.crop.LeekCropClass;
 import oodmod.block.crop.OnionCropClass;
+import oodmod.main.MainClass;
 
 public class BlockClass
 {
@@ -89,7 +93,7 @@ public class BlockClass
     			
     	//Veg
     	GameRegistry.registerBlock(CompressedBroccoli, "CompressedBroccoli");
-    	GameRegistry.registerBlock(CompressedOnion, "CompressedOnion");;
+    	GameRegistry.registerBlock(CompressedOnion, "CompressedOnion");
     	GameRegistry.registerBlock(CompressedBeetroot, "CompressedBeetroot");
     	GameRegistry.registerBlock(CompressedCauliflower, "CompressedCauliflower");
     	GameRegistry.registerBlock(CompressedLeek, "CompressedLeek");
@@ -106,4 +110,41 @@ public class BlockClass
     	
     }
     
+    public static void registerRenders()
+	{
+
+    	//Crops
+    	registerRender(BroccoliCrop);
+    	registerRender(OnionCrop);
+    	registerRender(BeetrootCrop);
+    	registerRender(CauliflowerCrop);
+    	registerRender(LeekCrop);
+    	registerRender(GarlicCrop);
+    			
+    	//Veg
+    	registerRender(CompressedBroccoli);
+    	registerRender(CompressedOnion);
+    	registerRender(CompressedBeetroot);
+    	registerRender(CompressedCauliflower);
+    	registerRender(CompressedLeek);
+    	registerRender(CompressedGarlic);
+    			
+    	//Ores
+    	registerRender(KroostylOre);
+    			
+    	//Decorative Blocks
+    	registerRender(KroostylBlock);
+    	registerRender(KroostylBricks);
+    	registerRender(KroostylChiseledBricks);
+    	registerRender(KroostylBrickStairs);
+		
+	}
+	
+	public static void registerRender(Block block)
+	{
+		
+		Item item = Item.getItemFromBlock(block);
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, 0, new ModelResourceLocation(MainClass.MODID + ":" + item.getUnlocalizedName().substring(5), "inventory"));
+		
+	}
 }

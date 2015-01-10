@@ -3,7 +3,12 @@ package oodmod.main;
 public class CommonProxy
 {
 	
-	public static void renderStuff()
+	public static void render()
+	{
+		
+	}
+
+	public void registerRenders() 
 	{
 		
 	}
