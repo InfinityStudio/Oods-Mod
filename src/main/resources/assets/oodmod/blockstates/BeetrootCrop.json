@@ -1,0 +1,12 @@
+{
+    "variants": {
+        "age=0": { "model": "oodmod:BeetrootCrop1" },
+        "age=1": { "model": "oodmod:BeetrootCrop1" },
+        "age=2": { "model": "oodmod:BeetrootCrop2" },
+        "age=3": { "model": "oodmod:BeetrootCrop2" },
+        "age=4": { "model": "oodmod:BeetrootCrop3" },
+        "age=5": { "model": "oodmod:BeetrootCrop3" },
+        "age=6": { "model": "oodmod:BeetrootCrop4" },
+        "age=7": { "model": "oodmod:BeetrootCrop4" }
+    }
+}
