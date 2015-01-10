@@ -1,6 +1,5 @@
 itemGroup.OodModTab=Ood's Mod
 
-
 achievement.MineKroostyl=KROOSTYL!
 achievement.KroostylPick=A New Level of OP
 
@@ -58,7 +57,6 @@ tile.KroostylBricks.name=Kroostyl Bricks
 tile.KroostylChiseledBricks.name=Chiseled Kroostyl Bricks
 tile.KroostylBrickStairs.name=Kroostyl Brick Stairs
 
-
 tile.Plank.Orange.name=Orange Wood Planks
 
 tile.Log.Orange.name=Orange Wood
@@ -107,4 +105,3 @@ item.RecordMamboNo5.desc=Lou Bega - Mambo No. 5
 
 item.RecordImGonnaBe.name=Music Disc
 item.RecordImGonnaBe.desc=The Proclaimers - I'm Gonna Be (500 Miles)
-
