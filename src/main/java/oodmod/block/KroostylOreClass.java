@@ -1,7 +1,6 @@
 package oodmod.block;
 
 import java.util.Random;
-
 import net.minecraft.block.BlockOre;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
