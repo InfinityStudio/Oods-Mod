@@ -6,15 +6,9 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-import oodmod.block.crop.BeetrootCropClass;
-import oodmod.block.crop.BroccoliCropClass;
-import oodmod.block.crop.CauliflowerCropClass;
-import oodmod.block.crop.GarlicCropClass;
-import oodmod.block.crop.LeekCropClass;
-import oodmod.block.crop.OnionCropClass;
 import oodmod.main.MainClass;
 
-public class BlockClass
+public class BlockRegistry
 {
 	
     public static void blockRegistry()
@@ -54,12 +48,12 @@ public class BlockClass
     {
     	
     	//Crops
-    	BroccoliCrop = new BroccoliCropClass().setUnlocalizedName("BroccoliCrop");
-    	OnionCrop = new OnionCropClass().setUnlocalizedName("OnionCrop");
-  		BeetrootCrop = new BeetrootCropClass().setUnlocalizedName("BeetrootCrop");
-  		CauliflowerCrop = new CauliflowerCropClass().setUnlocalizedName("CauliflowerCrop");
-  		LeekCrop = new LeekCropClass().setUnlocalizedName("LeekCrop");
-  		GarlicCrop = new GarlicCropClass().setUnlocalizedName("GarlicCrop");
+    	BroccoliCrop = new CropClass().setUnlocalizedName("BroccoliCrop");
+    	OnionCrop = new CropClass().setUnlocalizedName("OnionCrop");
+  		BeetrootCrop = new CropClass().setUnlocalizedName("BeetrootCrop");
+  		CauliflowerCrop = new CropClass().setUnlocalizedName("CauliflowerCrop");
+  		LeekCrop = new CropClass().setUnlocalizedName("LeekCrop");
+  		GarlicCrop = new CropClass().setUnlocalizedName("GarlicCrop");
   		
   		//Veg
   		CompressedBroccoli = new CompressedVegClass().setUnlocalizedName("CompressedBroccoli");
