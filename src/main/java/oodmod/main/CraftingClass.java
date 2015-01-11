@@ -4,8 +4,8 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-import oodmod.block.BlockClass;
-import oodmod.item.ItemClass;
+import oodmod.block.BlockRegistry;
+import oodmod.item.ItemRegistry;
 
 public class CraftingClass
 {
@@ -23,57 +23,57 @@ public class CraftingClass
 		
 		//Shaped Recipes
 		
-		GameRegistry.addRecipe(new ItemStack(BlockClass.CompressedBroccoli, 1), new Object[] {"XXX", "XXX", "XXX", 'X', ItemClass.Broccoli});
-		GameRegistry.addRecipe(new ItemStack(BlockClass.CompressedOnion, 1), new Object[] {"XXX", "XXX", "XXX", 'X', ItemClass.Onion});				
-		GameRegistry.addRecipe(new ItemStack(BlockClass.CompressedBeetroot, 1), new Object[] {"XXX", "XXX", "XXX", 'X', ItemClass.Beetroot});
-		GameRegistry.addRecipe(new ItemStack(BlockClass.CompressedCauliflower, 1), new Object[] {"XXX", "XXX", "XXX", 'X', ItemClass.Cauliflower});
-		GameRegistry.addRecipe(new ItemStack(BlockClass.CompressedLeek, 1), new Object[] {"XXX", "XXX", "XXX", 'X', ItemClass.Leek});
-		GameRegistry.addRecipe(new ItemStack(BlockClass.CompressedGarlic, 1), new Object[] {"XXX", "XXX", "XXX", 'X', ItemClass.Garlic});
+		GameRegistry.addRecipe(new ItemStack(BlockRegistry.CompressedBroccoli, 1), new Object[] {"XXX", "XXX", "XXX", 'X', ItemRegistry.Broccoli});
+		GameRegistry.addRecipe(new ItemStack(BlockRegistry.CompressedOnion, 1), new Object[] {"XXX", "XXX", "XXX", 'X', ItemRegistry.Onion});				
+		GameRegistry.addRecipe(new ItemStack(BlockRegistry.CompressedBeetroot, 1), new Object[] {"XXX", "XXX", "XXX", 'X', ItemRegistry.Beetroot});
+		GameRegistry.addRecipe(new ItemStack(BlockRegistry.CompressedCauliflower, 1), new Object[] {"XXX", "XXX", "XXX", 'X', ItemRegistry.Cauliflower});
+		GameRegistry.addRecipe(new ItemStack(BlockRegistry.CompressedLeek, 1), new Object[] {"XXX", "XXX", "XXX", 'X', ItemRegistry.Leek});
+		GameRegistry.addRecipe(new ItemStack(BlockRegistry.CompressedGarlic, 1), new Object[] {"XXX", "XXX", "XXX", 'X', ItemRegistry.Garlic});
 				
-		GameRegistry.addRecipe(new ItemStack(BlockClass.KroostylBlock, 1), new Object[] {"XXX", "XXX", "XXX", 'X', ItemClass.Kroostyl});
-		GameRegistry.addRecipe(new ItemStack(BlockClass.KroostylBricks, 8), new Object[] {"YYY", "YXY", "YYY", 'X', ItemClass.Kroostyl, 'Y', Blocks.stonebrick});
-		GameRegistry.addRecipe(new ItemStack(BlockClass.KroostylBricks, 64), new Object[] {"YYY", "YXY", "YYY", 'X', BlockClass.KroostylBlock, 'Y', Blocks.stonebrick});
-		GameRegistry.addRecipe(new ItemStack(BlockClass.KroostylBrickStairs, 4), new Object[] {"  X", " XX", "XXX", 'X', BlockClass.KroostylBricks});
+		GameRegistry.addRecipe(new ItemStack(BlockRegistry.KroostylBlock, 1), new Object[] {"XXX", "XXX", "XXX", 'X', ItemRegistry.Kroostyl});
+		GameRegistry.addRecipe(new ItemStack(BlockRegistry.KroostylBricks, 8), new Object[] {"YYY", "YXY", "YYY", 'X', ItemRegistry.Kroostyl, 'Y', Blocks.stonebrick});
+		GameRegistry.addRecipe(new ItemStack(BlockRegistry.KroostylBricks, 64), new Object[] {"YYY", "YXY", "YYY", 'X', BlockRegistry.KroostylBlock, 'Y', Blocks.stonebrick});
+		GameRegistry.addRecipe(new ItemStack(BlockRegistry.KroostylBrickStairs, 4), new Object[] {"  X", " XX", "XXX", 'X', BlockRegistry.KroostylBricks});
 				
-		GameRegistry.addRecipe(new ItemStack(ItemClass.KroostylAxe, 1), new Object[] {"XX ", "XY ", " Y ", 'X', ItemClass.Kroostyl, 'Y', Items.stick});
-		GameRegistry.addRecipe(new ItemStack(ItemClass.KroostylPickaxe, 1), new Object[] {"XXX", " Y ", " Y ", 'X', ItemClass.Kroostyl, 'Y', Items.stick});
-		GameRegistry.addRecipe(new ItemStack(ItemClass.KroostylShovel, 1), new Object[] {" X ", " Y ", " Y ", 'X', ItemClass.Kroostyl, 'Y', Items.stick});
-		GameRegistry.addRecipe(new ItemStack(ItemClass.KroostylHoe, 1), new Object[] {"XX ", " Y ", " Y ", 'X', ItemClass.Kroostyl, 'Y', Items.stick});
-		GameRegistry.addRecipe(new ItemStack(ItemClass.KroostylSword, 1), new Object[] {" X ", " X ", " Y ", 'X', ItemClass.Kroostyl, 'Y', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(ItemRegistry.KroostylAxe, 1), new Object[] {"XX ", "XY ", " Y ", 'X', ItemRegistry.Kroostyl, 'Y', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(ItemRegistry.KroostylPickaxe, 1), new Object[] {"XXX", " Y ", " Y ", 'X', ItemRegistry.Kroostyl, 'Y', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(ItemRegistry.KroostylShovel, 1), new Object[] {" X ", " Y ", " Y ", 'X', ItemRegistry.Kroostyl, 'Y', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(ItemRegistry.KroostylHoe, 1), new Object[] {"XX ", " Y ", " Y ", 'X', ItemRegistry.Kroostyl, 'Y', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(ItemRegistry.KroostylSword, 1), new Object[] {" X ", " X ", " Y ", 'X', ItemRegistry.Kroostyl, 'Y', Items.stick});
 				
 				
 		//Shapeless Recipes
 				
-		GameRegistry.addShapelessRecipe(new ItemStack(ItemClass.Broccoli, 9), BlockClass.CompressedBroccoli);
-		GameRegistry.addShapelessRecipe(new ItemStack(ItemClass.BroccoliSeeds, 1), ItemClass.Broccoli);
+		GameRegistry.addShapelessRecipe(new ItemStack(ItemRegistry.Broccoli, 9), BlockRegistry.CompressedBroccoli);
+		GameRegistry.addShapelessRecipe(new ItemStack(ItemRegistry.BroccoliSeeds, 1), ItemRegistry.Broccoli);
 				
-		GameRegistry.addShapelessRecipe(new ItemStack(ItemClass.Onion, 9), BlockClass.CompressedOnion);
-		GameRegistry.addShapelessRecipe(new ItemStack(ItemClass.OnionSeeds, 1), ItemClass.Onion);
+		GameRegistry.addShapelessRecipe(new ItemStack(ItemRegistry.Onion, 9), BlockRegistry.CompressedOnion);
+		GameRegistry.addShapelessRecipe(new ItemStack(ItemRegistry.OnionSeeds, 1), ItemRegistry.Onion);
 				
-		GameRegistry.addShapelessRecipe(new ItemStack(ItemClass.Beetroot, 9), BlockClass.CompressedBeetroot);
-		GameRegistry.addShapelessRecipe(new ItemStack(ItemClass.BeetrootSeeds, 1), ItemClass.Beetroot);
+		GameRegistry.addShapelessRecipe(new ItemStack(ItemRegistry.Beetroot, 9), BlockRegistry.CompressedBeetroot);
+		GameRegistry.addShapelessRecipe(new ItemStack(ItemRegistry.BeetrootSeeds, 1), ItemRegistry.Beetroot);
 				
-		GameRegistry.addShapelessRecipe(new ItemStack(ItemClass.Cauliflower, 9), BlockClass.CompressedCauliflower);
-		GameRegistry.addShapelessRecipe(new ItemStack(ItemClass.CauliflowerSeeds, 1), ItemClass.Cauliflower);
+		GameRegistry.addShapelessRecipe(new ItemStack(ItemRegistry.Cauliflower, 9), BlockRegistry.CompressedCauliflower);
+		GameRegistry.addShapelessRecipe(new ItemStack(ItemRegistry.CauliflowerSeeds, 1), ItemRegistry.Cauliflower);
 				
-		GameRegistry.addShapelessRecipe(new ItemStack(ItemClass.Leek, 9), BlockClass.CompressedLeek);
-		GameRegistry.addShapelessRecipe(new ItemStack(ItemClass.LeekSeeds, 1), ItemClass.Leek);
+		GameRegistry.addShapelessRecipe(new ItemStack(ItemRegistry.Leek, 9), BlockRegistry.CompressedLeek);
+		GameRegistry.addShapelessRecipe(new ItemStack(ItemRegistry.LeekSeeds, 1), ItemRegistry.Leek);
 				
-		GameRegistry.addShapelessRecipe(new ItemStack(ItemClass.Garlic, 9), BlockClass.CompressedGarlic);
-		GameRegistry.addShapelessRecipe(new ItemStack(ItemClass.GarlicSeeds, 1), ItemClass.Garlic);
+		GameRegistry.addShapelessRecipe(new ItemStack(ItemRegistry.Garlic, 9), BlockRegistry.CompressedGarlic);
+		GameRegistry.addShapelessRecipe(new ItemStack(ItemRegistry.GarlicSeeds, 1), ItemRegistry.Garlic);
 				
-		GameRegistry.addShapelessRecipe(new ItemStack(ItemClass.Kroostyl, 9), BlockClass.KroostylBlock);
+		GameRegistry.addShapelessRecipe(new ItemStack(ItemRegistry.Kroostyl, 9), BlockRegistry.KroostylBlock);
 
-		GameRegistry.addShapelessRecipe(new ItemStack(BlockClass.KroostylChiseledBricks, 1), BlockClass.KroostylBricks);
-		GameRegistry.addShapelessRecipe(new ItemStack(BlockClass.KroostylBricks, 1), BlockClass.KroostylChiseledBricks);
+		GameRegistry.addShapelessRecipe(new ItemStack(BlockRegistry.KroostylChiseledBricks, 1), BlockRegistry.KroostylBricks);
+		GameRegistry.addShapelessRecipe(new ItemStack(BlockRegistry.KroostylBricks, 1), BlockRegistry.KroostylChiseledBricks);
 						
 	}
 	
 	public static void addSmeltingRecipes()
 	{
 		
-		GameRegistry.addSmelting(ItemClass.Broccoli, new ItemStack(ItemClass.BoiledBroccoli, 1), 0.00F);
-		GameRegistry.addSmelting(BlockClass.KroostylOre, new ItemStack(ItemClass.Kroostyl, 1), 2.50F);
+		GameRegistry.addSmelting(ItemRegistry.Broccoli, new ItemStack(ItemRegistry.BoiledBroccoli, 1), 0.00F);
+		GameRegistry.addSmelting(BlockRegistry.KroostylOre, new ItemStack(ItemRegistry.Kroostyl, 1), 2.50F);
 		
 	}
 

@@ -3,7 +3,7 @@ package oodmod.item.armour;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
-import oodmod.item.ItemClass;
+import oodmod.item.ItemRegistry;
 import oodmod.main.MainClass;
 
 public class ReinforcedKroostylArmour extends ItemArmor 
@@ -21,11 +21,11 @@ public class ReinforcedKroostylArmour extends ItemArmor
 	public String getArmorTexture(ItemStack stack, Entity entity, int slot, String type) 
 	{
 		
-		if (stack.getItem() == ItemClass.ReinforcedKroostylHelmet || stack.getItem() == ItemClass.ReinforcedKroostylChestplate || stack.getItem() == ItemClass.ReinforcedKroostylBoots) 
+		if (stack.getItem() == ItemRegistry.ReinforcedKroostylHelmet || stack.getItem() == ItemRegistry.ReinforcedKroostylChestplate || stack.getItem() == ItemRegistry.ReinforcedKroostylBoots) 
 		{
 			return MainClass.MODID + ":textures/models/armor/ReinforcedKroostylArmour_1.png";
 		}
-		else if (stack.getItem() == ItemClass.ReinforcedKroostylLeggings) 
+		else if (stack.getItem() == ItemRegistry.ReinforcedKroostylLeggings) 
 		{
 			return MainClass.MODID + ":textures/models/armor/ReinforcedKroostylArmour_2.png";
 		}

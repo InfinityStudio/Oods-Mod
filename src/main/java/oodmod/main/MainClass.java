@@ -18,9 +18,9 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.OreDictionary;
 import oodmod.achievements.KroostylCraftEventClass;
 import oodmod.achievements.KroostylMineEventClass;
-import oodmod.block.BlockClass;
+import oodmod.block.BlockRegistry;
 import oodmod.creativetabs.OodModTab;
-import oodmod.item.ItemClass;
+import oodmod.item.ItemRegistry;
 import oodmod.worldgen.OreGenerationClass;
 
 @Mod(modid = MainClass.MODID, name = MainClass.NAME, version = MainClass.VERSION)
@@ -54,8 +54,8 @@ public class MainClass
 	{
 	
 		//Block and Item Registering
-		BlockClass.blockRegistry();
-		ItemClass.itemRegistry();
+		BlockRegistry.blockRegistry();
+		ItemRegistry.itemRegistry();
 		
 	}
 		
@@ -69,8 +69,8 @@ public class MainClass
 		CraftingClass.craftingManager();
 		
 		//Achievements
-		achievementKroostyl = new Achievement("achievement.MineKroostyl", "MineKroostyl", 0, 0, BlockClass.KroostylOre, AchievementList.diamonds).func_180788_c();
-		achievementKroostylPick = new Achievement("achievement.KroostylPick", "KroostylPick", 2, 1, ItemClass.KroostylPickaxe, achievementKroostyl).func_180788_c();
+		achievementKroostyl = new Achievement("achievement.MineKroostyl", "MineKroostyl", 0, 0, BlockRegistry.KroostylOre, AchievementList.diamonds).func_180788_c();
+		achievementKroostylPick = new Achievement("achievement.KroostylPick", "KroostylPick", 2, 1, ItemRegistry.KroostylPickaxe, achievementKroostyl).func_180788_c();
 		AchievementPage.registerAchievementPage(new AchievementPage("Ood's Mod", new Achievement[]{achievementKroostyl, achievementKroostylPick}));
 		FMLCommonHandler.instance().bus().register(new KroostylMineEventClass());
 		FMLCommonHandler.instance().bus().register(new KroostylCraftEventClass());
@@ -79,16 +79,16 @@ public class MainClass
 		GameRegistry.registerWorldGenerator(KroostylWorldGen, 1);
 		
 		//Ore Registration
-		OreDictionary.registerOre("oreKroostyl", new ItemStack(BlockClass.KroostylOre));
-		OreDictionary.registerOre("gemKroostyl", new ItemStack(ItemClass.Kroostyl));
+		OreDictionary.registerOre("oreKroostyl", new ItemStack(BlockRegistry.KroostylOre));
+		OreDictionary.registerOre("gemKroostyl", new ItemStack(ItemRegistry.Kroostyl));
 		
 		//Seed Dropping
-		MinecraftForge.addGrassSeed(new ItemStack(ItemClass.BroccoliSeeds), 1);
-		MinecraftForge.addGrassSeed(new ItemStack(ItemClass.OnionSeeds), 1);
-		MinecraftForge.addGrassSeed(new ItemStack(ItemClass.BeetrootSeeds), 1);
-		MinecraftForge.addGrassSeed(new ItemStack(ItemClass.CauliflowerSeeds), 1);
-		MinecraftForge.addGrassSeed(new ItemStack(ItemClass.LeekSeeds), 1);
-		MinecraftForge.addGrassSeed(new ItemStack(ItemClass.GarlicSeeds), 1);
+		MinecraftForge.addGrassSeed(new ItemStack(ItemRegistry.BroccoliSeeds), 1);
+		MinecraftForge.addGrassSeed(new ItemStack(ItemRegistry.OnionSeeds), 1);
+		MinecraftForge.addGrassSeed(new ItemStack(ItemRegistry.BeetrootSeeds), 1);
+		MinecraftForge.addGrassSeed(new ItemStack(ItemRegistry.CauliflowerSeeds), 1);
+		MinecraftForge.addGrassSeed(new ItemStack(ItemRegistry.LeekSeeds), 1);
+		MinecraftForge.addGrassSeed(new ItemStack(ItemRegistry.GarlicSeeds), 1);
 		
 	}
 	

@@ -7,7 +7,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;
 import net.minecraft.world.IBlockAccess;
-import oodmod.item.ItemClass;
+import oodmod.item.ItemRegistry;
 import oodmod.main.MainClass;
 
 public class KroostylOreClass extends BlockOre
@@ -29,7 +29,7 @@ public class KroostylOreClass extends BlockOre
 	@Override
 	public Item getItemDropped(IBlockState state, Random rand, int fortune) 
 	{
-		return ItemClass.Kroostyl;
+		return ItemRegistry.Kroostyl;
 	}
 	
 	@Override

@@ -7,7 +7,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenMinable;
 import net.minecraftforge.fml.common.IWorldGenerator;
-import oodmod.block.BlockClass;
+import oodmod.block.BlockRegistry;
 
 public class OreGenerationClass implements IWorldGenerator
 {
@@ -32,7 +32,7 @@ public class OreGenerationClass implements IWorldGenerator
 			
 			BlockPos pos = new BlockPos(posX,posY,posZ);
 			
-			(new WorldGenMinable(BlockClass.KroostylOre.getDefaultState(), 4)).generate(world, random, pos);
+			(new WorldGenMinable(BlockRegistry.KroostylOre.getDefaultState(), 4)).generate(world, random, pos);
 			
 		}
 		

@@ -1,7 +1,7 @@
 package oodmod.main;
 
-import oodmod.block.BlockClass;
-import oodmod.item.ItemClass;
+import oodmod.block.BlockRegistry;
+import oodmod.item.ItemRegistry;
 
 public class ClientProxy extends CommonProxy
 {
@@ -15,8 +15,8 @@ public class ClientProxy extends CommonProxy
 	public void registerRenders()
 	{
 
-	    BlockClass.registerRenders();
-	    ItemClass.registerRenders();
+	    BlockRegistry.registerRenders();
+	    ItemRegistry.registerRenders();
 	    
 	}
 	

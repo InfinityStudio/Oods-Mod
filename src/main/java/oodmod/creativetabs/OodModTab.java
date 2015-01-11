@@ -1,6 +1,6 @@
 package oodmod.creativetabs;
 
-import oodmod.item.ItemClass;
+import oodmod.item.ItemRegistry;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 
@@ -15,7 +15,7 @@ public class OodModTab extends CreativeTabs
 	@Override
 	public Item getTabIconItem()
 	{
-		return ItemClass.BoiledBroccoli;
+		return ItemRegistry.BoiledBroccoli;
 	}
 
 }
