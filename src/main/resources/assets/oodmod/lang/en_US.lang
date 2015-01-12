@@ -10,8 +10,6 @@ item.Broccoli.name=Broccoli
 item.BoiledBroccoli.name=Boiled Broccoli
 item.BroccoliSeeds.name=Broccoli Seeds
 
-item.OrangeBroccoli.name=Orange Broccoli
-
 tile.CompressedBroccoli.name=Compressed Broccoli
 tile.BroccoliCrop.name=Broccoli Crop
 
@@ -45,10 +43,6 @@ item.GarlicSeeds.name=Garlic Seeds
 tile.CompressedGarlic.name=Compressed Garlic
 tile.GarlicCrop.name=Garlic Crop
 
-item.Mango.name=Mango
-item.Banana.name=Banana
-item.Orange.name=Orange
-
 item.Kroostyl.name=Kroostyl
 
 tile.KroostylOre.name=Kroostyl Ore
@@ -56,12 +50,6 @@ tile.KroostylBlock.name=Block of Kroostyl
 tile.KroostylBricks.name=Kroostyl Bricks
 tile.KroostylChiseledBricks.name=Chiseled Kroostyl Bricks
 tile.KroostylBrickStairs.name=Kroostyl Brick Stairs
-
-tile.Plank.Orange.name=Orange Wood Planks
-
-tile.Log.Orange.name=Orange Wood
-tile.Leaves.Orange.name=Orange Leaves
-tile.Sapling.Orange.name=Orange Sapling
 
 item.KroostylAxe.name=Kroostyl Axe
 item.KroostylPickaxe.name=Kroostyl Pickaxe

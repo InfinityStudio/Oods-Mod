@@ -56,7 +56,6 @@ public class ItemRegistry
 	public static Item Leek;
 	public static Item Garlic;
 	public static Item BoiledBroccoli;
-	public static Item OrangeBroccoli;
 		
 	//Ingots & Gems
 	public static Item Kroostyl;
@@ -98,7 +97,6 @@ public class ItemRegistry
 		Leek = new FoodClass(2, 0.3F, false).setUnlocalizedName("Leek");
 		Garlic = new FoodClass(2, 0.3F, false).setUnlocalizedName("Garlic");
 		BoiledBroccoli = new FoodClass(6, 1.2F, false).setUnlocalizedName("BoiledBroccoli");
-		OrangeBroccoli = new FoodClass(20, 1.2F, false).setUnlocalizedName("OrangeBroccoli");
 		
 		//Ingots & Gems
 		Kroostyl = new ItemClass().setUnlocalizedName("Kroostyl");
@@ -141,9 +139,7 @@ public class ItemRegistry
 		GameRegistry.registerItem(Cauliflower, "Cauliflower");
 		GameRegistry.registerItem(Leek, "Leek");
 		GameRegistry.registerItem(Garlic, "Garlic");
-
 		GameRegistry.registerItem(BoiledBroccoli, "BoiledBroccoli");
-		GameRegistry.registerItem(OrangeBroccoli, "OrangeBroccoli");
 				
 		//Ingots & Gems
 		GameRegistry.registerItem(Kroostyl, "Kroostyl");
@@ -186,9 +182,7 @@ public class ItemRegistry
 		registerRender(Cauliflower);
 		registerRender(Leek);
 		registerRender(Garlic);
-		
 		registerRender(BoiledBroccoli);
-		registerRender(OrangeBroccoli);
 		
 		//Ingots & Gems
 		registerRender(Kroostyl);
