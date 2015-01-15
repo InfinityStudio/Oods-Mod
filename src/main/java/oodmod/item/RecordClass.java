@@ -25,9 +25,9 @@ public class RecordClass extends ItemRecord
 {
 	
 	private static final Map records = new HashMap();
-
+	
 	public final String recordName;
-
+	
 	public RecordClass(String recordName)
 	{
 		
@@ -41,59 +41,59 @@ public class RecordClass extends ItemRecord
 		records.put(recordName, this);
 		
 	}
-
+	
 	public boolean onItemUse(ItemStack stack, EntityPlayer playerIn, World worldIn, BlockPos pos, EnumFacing side, float hitX, float hitY, float hitZ)
-    {
+	{
 		
-        IBlockState iblockstate = worldIn.getBlockState(pos);
-
-        if (iblockstate.getBlock() == Blocks.jukebox && !((Boolean)iblockstate.getValue(BlockJukebox.HAS_RECORD)).booleanValue())
-        {
-            if (worldIn.isRemote)
-            {
-                return true;
-            }
-            else
-            {
-                ((BlockJukebox)Blocks.jukebox).insertRecord(worldIn, pos, iblockstate, stack);
-                worldIn.playAuxSFXAtEntity((EntityPlayer)null, 1005, pos, Item.getIdFromItem(this));
-                --stack.stackSize;
-                return true;
-            }
-        }
-        else
-        {
-            return false;
-        }
-        
-    }
-
+		IBlockState iblockstate = worldIn.getBlockState(pos);
+		
+		if (iblockstate.getBlock() == Blocks.jukebox && !((Boolean)iblockstate.getValue(BlockJukebox.HAS_RECORD)).booleanValue())
+		{
+			if (worldIn.isRemote)
+			{
+				return true;
+			}
+			else
+			{
+				((BlockJukebox)Blocks.jukebox).insertRecord(worldIn, pos, iblockstate, stack);
+				worldIn.playAuxSFXAtEntity((EntityPlayer)null, 1005, pos, Item.getIdFromItem(this));
+				--stack.stackSize;
+				return true;
+			}
+		}
+		else
+		{
+			return false;
+		}
+		
+	}
+	
 	@SideOnly(Side.CLIENT)
-    public void addInformation(ItemStack stack, EntityPlayer playerIn, List tooltip, boolean advanced)
-    {
-        tooltip.add(this.getRecordNameLocal());
-    }
-
+	public void addInformation(ItemStack stack, EntityPlayer playerIn, List tooltip, boolean advanced)
+	{
+		tooltip.add(this.getRecordNameLocal());
+	}
+	
 	@SideOnly(Side.CLIENT)
-    public String getRecordNameLocal()
+	public String getRecordNameLocal()
 	{
 		return StatCollector.translateToLocal(this.getUnlocalizedName() + ".desc");
 	}
-
+	
 	public EnumRarity getRarity(ItemStack stack)
-    {
-        return EnumRarity.RARE;
-    }
-
+	{
+		return EnumRarity.RARE;
+	}
+	
 	@SideOnly(Side.CLIENT)
-    public static ItemRecord getRecord(String name)
+	public static ItemRecord getRecord(String name)
 	{
 		return (RecordClass)records.get(name);
 	}
 	
-    public ResourceLocation getRecordResource(String name)
-    {
-        return new ResourceLocation(MainClass.MODID + ":" + name);
-    }
-    
+	public ResourceLocation getRecordResource(String name)
+	{
+		return new ResourceLocation(MainClass.MODID + ":" + name);
+	}
+	
 }
