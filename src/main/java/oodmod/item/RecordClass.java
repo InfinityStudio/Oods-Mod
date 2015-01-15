@@ -3,7 +3,6 @@ package oodmod.item;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 import oodmod.main.MainClass;
 import net.minecraft.block.BlockJukebox;
 import net.minecraft.block.state.IBlockState;
