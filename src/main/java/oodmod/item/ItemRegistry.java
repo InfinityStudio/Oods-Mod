@@ -78,6 +78,17 @@ public class ItemRegistry
 	public static Item ReinforcedKroostylLeggings;
 	public static Item ReinforcedKroostylBoots;
 	
+	//Records
+	public static Item RecordCrispy;
+	public static Item RecordSandstorm;
+	public static Item RecordBangarang;
+	public static Item RecordTryItOut;
+	public static Item RecordGetLucky;
+	public static Item RecordStayinAlive;
+	public static Item RecordWatercolour;
+	public static Item RecordMamboNo5;
+	public static Item RecordImGonnaBe;
+	
 	public static void initItems()
 	{
 		
@@ -118,6 +129,17 @@ public class ItemRegistry
 		ReinforcedKroostylChestplate = new ReinforcedKroostylArmour(ReinforcedKroostylArmour, chestplateID, 1).setUnlocalizedName("ReinforcedKroostylChestplate");
 		ReinforcedKroostylLeggings = new ReinforcedKroostylArmour(ReinforcedKroostylArmour, leggingsID, 2).setUnlocalizedName("ReinforcedKroostylLeggings");
 		ReinforcedKroostylBoots = new ReinforcedKroostylArmour(ReinforcedKroostylArmour, bootsID, 3).setUnlocalizedName("ReinforcedKroostylBoots");
+		
+		//Records
+		RecordCrispy = new RecordClass("Crispy").setUnlocalizedName("RecordCrispy");
+		RecordSandstorm = new RecordClass("Sandstorm").setUnlocalizedName("RecordSandstorm");
+		RecordBangarang = new RecordClass("Bangarang").setUnlocalizedName("RecordBangarang");
+		RecordTryItOut = new RecordClass("TryItOut").setUnlocalizedName("RecordTryItOut");
+		RecordGetLucky = new RecordClass("GetLucky").setUnlocalizedName("RecordGetLucky");
+		RecordStayinAlive = new RecordClass("StayinAlive").setUnlocalizedName("RecordStayinAlive");
+		RecordWatercolour = new RecordClass("Watercolour").setUnlocalizedName("RecordWatercolour");
+		RecordMamboNo5 = new RecordClass("MamboNo5").setUnlocalizedName("RecordMamboNo5");
+		RecordImGonnaBe = new RecordClass("ImGonnaBe").setUnlocalizedName("RecordImGonnaBe");
 		
 	}
 	
@@ -161,6 +183,17 @@ public class ItemRegistry
 		GameRegistry.registerItem(ReinforcedKroostylChestplate, "ReinforcedKroostylChestplate");
 		GameRegistry.registerItem(ReinforcedKroostylLeggings, "ReinforcedKroostylLeggings");
 		GameRegistry.registerItem(ReinforcedKroostylBoots, "ReinforcedKroostylBoots");
+		
+		//Records
+		GameRegistry.registerItem(RecordCrispy, "RecordCrispy");
+		GameRegistry.registerItem(RecordSandstorm, "RecordSandstorm");
+		GameRegistry.registerItem(RecordBangarang, "RecordBangarang");
+		GameRegistry.registerItem(RecordTryItOut, "RecordTryItOut");
+		GameRegistry.registerItem(RecordGetLucky, "RecordGetLucky");
+		GameRegistry.registerItem(RecordStayinAlive, "RecordStayinAlive");
+		GameRegistry.registerItem(RecordWatercolour, "RecordWatercolour");
+		GameRegistry.registerItem(RecordMamboNo5, "RecordMamboNo5");
+		GameRegistry.registerItem(RecordImGonnaBe, "RecordImGonnaBe");
 				
 	}
 	
@@ -204,6 +237,17 @@ public class ItemRegistry
 		registerRender(ReinforcedKroostylChestplate);
 		registerRender(ReinforcedKroostylLeggings);
 		registerRender(ReinforcedKroostylBoots);
+		
+		//Records
+		registerRender(RecordCrispy);
+		registerRender(RecordSandstorm);
+		registerRender(RecordBangarang);
+		registerRender(RecordTryItOut);
+		registerRender(RecordGetLucky);
+		registerRender(RecordStayinAlive);
+		registerRender(RecordWatercolour);
+		registerRender(RecordMamboNo5);
+		registerRender(RecordImGonnaBe);
 		
 	}
 	
