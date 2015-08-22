@@ -1,0 +1,95 @@
+itemGroup.OodModTab=Ood's Mod
+
+achievement.MineKroostyl=克鲁斯蒂!
+achievement.KroostylPick=新一级管理员
+
+achievement.MineKroostyl.desc=弄一些克鲁斯蒂
+achievement.KroostylPick.desc=用克鲁斯蒂和木棍做一把镐
+
+item.Broccoli.name=西兰花
+item.BoiledBroccoli.name=煮西兰花
+item.BroccoliSeeds.name=西兰花种子
+
+tile.CompressedBroccoli.name=压缩西兰花
+tile.BroccoliCrop.name=西兰花庄稼
+
+item.Onion.name=洋葱
+item.OnionSeeds.name=洋葱种子
+
+tile.CompressedOnion.name=压缩洋葱
+tile.OnionCrop.name=洋葱庄稼
+
+item.Beetroot.name=甜菜
+item.BeetrootSeeds.name=甜菜种子
+
+tile.CompressedBeetroot.name=压缩甜菜
+tile.BeetrootCrop.name=甜菜庄稼
+
+item.Cauliflower.name=菜花
+item.CauliflowerSeeds.name=菜花种子
+
+tile.CompressedCauliflower.name=压缩菜花
+tile.CauliflowerCrop.name=菜花庄稼
+
+item.Leek.name=韭葱
+item.LeekSeeds.name=韭葱种子
+
+tile.CompressedLeek.name=压缩韭葱
+tile.LeekCrop.name=韭葱庄稼
+
+item.Garlic.name=大蒜
+item.GarlicSeeds.name=大蒜种子
+
+tile.CompressedGarlic.name=压缩大蒜
+tile.GarlicCrop.name=大蒜庄稼
+
+item.Kroostyl.name=克鲁斯蒂
+
+tile.KroostylOre.name=克鲁斯蒂矿
+tile.KroostylBlock.name=克鲁斯蒂块
+tile.KroostylBricks.name=克鲁斯蒂砖
+tile.KroostylChiseledBricks.name=錾制克鲁斯蒂砖
+tile.KroostylBrickStairs.name=克鲁斯蒂楼梯
+
+item.KroostylAxe.name=克鲁斯蒂斧
+item.KroostylPickaxe.name=克鲁斯蒂镐
+item.KroostylShovel.name=克鲁斯蒂锹
+item.KroostylHoe.name=克鲁斯蒂锄
+item.KroostylSword.name=克鲁斯蒂剑
+
+item.KroostylHelmet.name=克鲁斯蒂头盔
+item.KroostylChestplate.name=克鲁斯蒂胸甲
+item.KroostylLeggings.name=克鲁斯蒂护腿
+item.KroostylBoots.name=克鲁斯蒂靴子
+
+item.ReinforcedKroostylHelmet.name=强化克鲁斯蒂头盔
+item.ReinforcedKroostylChestplate.name=强化克鲁斯蒂胸甲
+item.ReinforcedKroostylLeggings.name=强化克鲁斯蒂护腿
+item.ReinforcedKroostylBoots.name=强化克鲁斯蒂靴子
+
+item.RecordCrispy.name=音乐唱片
+item.RecordCrispy.desc=Crispy Pops - Derp Song
+
+item.RecordSandstorm.name=音乐唱片
+item.RecordSandstorm.desc=Darude - Sandstorm
+
+item.RecordBangarang.name=音乐唱片
+item.RecordBangarang.desc=Skrillex - Bangarang
+
+item.RecordTryItOut.name=音乐唱片
+item.RecordTryItOut.desc=Skrillex - Imma Try It Out
+
+item.RecordGetLucky.name=音乐唱片
+item.RecordGetLucky.desc=Daft Punk - Get Lucky
+
+item.RecordStayinAlive.name=音乐唱片
+item.RecordStayinAlive.desc=Bee Gees - Stayin' Alive
+
+item.RecordWatercolour.name=音乐唱片
+item.RecordWatercolour.desc=Pendulum - Watercolour
+
+item.RecordMamboNo5.name=音乐唱片
+item.RecordMamboNo5.desc=Lou Bega - Mambo No. 5
+
+item.RecordImGonnaBe.name=音乐唱片
+item.RecordImGonnaBe.desc=The Proclaimers - I'm Gonna Be (500 Miles)
